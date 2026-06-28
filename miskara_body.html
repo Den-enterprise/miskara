@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>MISKARA — Body Spray · Eau de Parfum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Cinzel:wght@400;500;600&family=Raleway:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="cd"></div>
+<div id="cr"></div>
+
+
+
+
+<canvas id="spiral-canvas"></canvas>
+
+<div class="ph">
+  <button class="back-btn" onclick="window.location.href='miskara_final.html#msk-collection'">&#8592; Back</button>
+  <div class="ph-center">
+    <span class="ph-title">Body Spray</span>
+    <span class="ph-sub">Eau de Parfum</span>
+  </div>
+  <div style="font-family:Raleway,sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.22em;color:rgba(201,169,110,.6);display:flex;align-items:center;gap:6px;cursor:default"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span id="cart-count">0</span></div>
+</div>
+
+<div id="pg-grid">
+
+  <div class="pc-card active" onclick="doAdd('Royal Oudh','Body Spray',2199,'oud_body')">
+    <div class="pc-img"><img id="pi-oud" src="" alt="Royal Oudh" loading="lazy"></div>
+    <div class="pc-info">
+      <div class="pc-name">Royal Oudh</div>
+      <div class="pc-notes">Oud · Smoke · Sandalwood</div>
+      <div class="pc-mood">Sacred · Majestic</div>
+      <div class="pc-meta"><span class="pc-size">100ml</span><span class="pc-price">&#8377;2199</span></div>
+      <button class="pc-btn" onclick="event.stopPropagation();doAdd('Royal Oudh','Body Spray',2199,'oud_body')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="pc-card active" onclick="doAdd('Hawas Ice','Body Spray',1899,'haws_body')">
+    <div class="pc-img"><img id="pi-haw" src="" alt="Hawas Ice" loading="lazy"></div>
+    <div class="pc-info">
+      <div class="pc-name">Hawas Ice</div>
+      <div class="pc-notes">Aquatic · Mint · Musk</div>
+      <div class="pc-mood">Fresh · Electrifying</div>
+      <div class="pc-meta"><span class="pc-size">100ml</span><span class="pc-price">&#8377;1899</span></div>
+      <button class="pc-btn" onclick="event.stopPropagation();doAdd('Hawas Ice','Body Spray',1899,'haws_body')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="pc-card active" onclick="doAdd('CR7 Champion','Body Spray',1899,'body')">
+    <div class="pc-img"><img id="pi-cr7" src="" alt="CR7 Champion" loading="lazy"></div>
+    <div class="pc-info">
+      <div class="pc-name">CR7 Champion</div>
+      <div class="pc-notes">Aromatic · Spice · Cedar</div>
+      <div class="pc-mood">Powerful · Victorious</div>
+      <div class="pc-meta"><span class="pc-size">100ml</span><span class="pc-price">&#8377;1899</span></div>
+      <button class="pc-btn" onclick="event.stopPropagation();doAdd('CR7 Champion','Body Spray',1899,'body')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="pc-card cs">
+    <div class="pc-img">
+      <img id="pi-jag" src="" alt="Jaguar Classic" loading="lazy">
+      <div class="pc-cs-ov"><span class="pc-cs-badge">Coming Soon</span></div>
+    </div>
+    <div class="pc-info">
+      <div class="pc-name">Jaguar Classic</div>
+      <div class="pc-notes">Citrus · Wood · Amber</div>
+      <div class="pc-mood">Bold · Timeless</div>
+    </div>
+  </div>
+  <div class="pc-card cs">
+    <div class="pc-img">
+      <img id="pi-lat" src="" alt="Lattafa Kamrah Qahwa" loading="lazy">
+      <div class="pc-cs-ov"><span class="pc-cs-badge">Coming Soon</span></div>
+    </div>
+    <div class="pc-info">
+      <div class="pc-name">Lattafa Kamrah Qahwa</div>
+      <div class="pc-notes">Coffee · Saffron · Oud</div>
+      <div class="pc-mood">Warm · Intoxicating</div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+
+
+
+  <script src="miskara_body.js"></script>
+</body>
+</html>

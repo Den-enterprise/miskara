@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>MISKARA — Athar · Concentrated Oil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Cinzel:wght@400;500;600&family=Raleway:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="cd"></div>
+<div id="cr"></div>
+
+
+
+
+<div id="stars-bg"></div>
+
+<div class="ph">
+  <button class="back-btn" onclick="window.location.href='miskara_final.html#msk-collection'">&#8592; Back</button>
+  <div class="ph-center">
+    <span class="ph-title">Athar</span>
+    <span class="ph-sub">Concentrated Oil</span>
+  </div>
+  <button class="cart-btn" onclick="openCart()">Cart&nbsp;<span id="cart-count">0</span></button>
+</div>
+
+<div id="pg-grid">
+
+  <div class="pc-card active" onclick="doAdd('Royal Oudh','Athar',1699,'oud_athar')">
+    <div class="pc-img"><img id="pi-oud" src="" alt="Royal Oudh" loading="lazy"></div>
+    <div class="pc-info">
+      <div class="pc-name">Royal Oudh</div>
+      <div class="pc-notes">Oud · Smoke · Sandalwood</div>
+      <div class="pc-mood">Sacred · Majestic</div>
+      <div class="pc-meta"><span class="pc-size">30ml</span><span class="pc-price">&#8377;1699</span></div>
+      <button class="pc-btn" onclick="event.stopPropagation();doAdd('Royal Oudh','Athar',1699,'oud_athar')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="pc-card active" onclick="doAdd('Hawas Ice','Athar',1299,'haws_athar')">
+    <div class="pc-img"><img id="pi-haw" src="" alt="Hawas Ice" loading="lazy"></div>
+    <div class="pc-info">
+      <div class="pc-name">Hawas Ice</div>
+      <div class="pc-notes">Aquatic · Mint · Musk</div>
+      <div class="pc-mood">Fresh · Electrifying</div>
+      <div class="pc-meta"><span class="pc-size">15ml</span><span class="pc-price">&#8377;1299</span></div>
+      <button class="pc-btn" onclick="event.stopPropagation();doAdd('Hawas Ice','Athar',1299,'haws_athar')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="pc-card active" onclick="doAdd('CR7 Champion','Athar',1299,'athar')">
+    <div class="pc-img"><img id="pi-cr7" src="" alt="CR7 Champion" loading="lazy"></div>
+    <div class="pc-info">
+      <div class="pc-name">CR7 Champion</div>
+      <div class="pc-notes">Aromatic · Spice · Cedar</div>
+      <div class="pc-mood">Powerful · Victorious</div>
+      <div class="pc-meta"><span class="pc-size">15ml</span><span class="pc-price">&#8377;1299</span></div>
+      <button class="pc-btn" onclick="event.stopPropagation();doAdd('CR7 Champion','Athar',1299,'athar')">Add to Cart</button>
+    </div>
+  </div>
+  <div class="pc-card cs">
+    <div class="pc-img">
+      <img id="pi-jag" src="" alt="Jaguar Classic" loading="lazy">
+      <div class="pc-cs-ov"><span class="pc-cs-badge">Coming Soon</span></div>
+    </div>
+    <div class="pc-info">
+      <div class="pc-name">Jaguar Classic</div>
+      <div class="pc-notes">Citrus · Wood · Amber</div>
+      <div class="pc-mood">Bold · Timeless</div>
+    </div>
+  </div>
+  <div class="pc-card cs">
+    <div class="pc-img">
+      <img id="pi-lat" src="" alt="Lattafa Kamrah Qahwa" loading="lazy">
+      <div class="pc-cs-ov"><span class="pc-cs-badge">Coming Soon</span></div>
+    </div>
+    <div class="pc-info">
+      <div class="pc-name">Lattafa Kamrah Qahwa</div>
+      <div class="pc-notes">Coffee · Saffron · Oud</div>
+      <div class="pc-mood">Warm · Intoxicating</div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<div id="cart-ov" onclick="closeCart()"></div>
+<div id="cart-side">
+  <div class="cart-hd"><span class="cart-hd-title">YOUR CART</span><button class="cart-close" onclick="closeCart()">&#x2715;</button></div>
+  <div id="cart-body"><p class="cart-empty-msg">Your cart is empty</p></div>
+  <div class="cart-ft" id="cart-foot">
+    <div class="cart-total-row"><span>TOTAL</span><span id="cart-total">&#8377;0</span></div>
+    <button class="checkout-btn" onclick="alert('Checkout coming soon!')">CHECKOUT</button>
+  </div>
+</div>
+
+
+
+  <script src="miskara_athar.js"></script>
+</body>
+</html>
