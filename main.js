@@ -1225,9 +1225,55 @@ document.addEventListener('DOMContentLoaded', ()=>{
   /* Patch btn-checkout to use our checkout */
   const coBtn = document.querySelector('.btn-checkout');
   if(coBtn) coBtn.onclick = openCheckout;
+
+  /* Open newsletter modal after 4 seconds. Replace NEWSLETTER_ENDPOINT with your Google Apps Script / Formspree endpoint. */
+  const newsletterTimer = setTimeout(openNewsletterModal, 4000);
+
+  const newsletterForm = document.getElementById('newsletter-form');
+  if(newsletterForm){
+    newsletterForm.addEventListener('submit', submitNewsletter);
+  }
 });
 
 /* ── Also patch the checkout function called directly ── */
+
+var NEWSLETTER_ENDPOINT = '';
+
+function openNewsletterModal(){
+  document.getElementById('newsletter-overlay').classList.add('open');
+  document.getElementById('newsletter-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNewsletterModal(){
+  document.getElementById('newsletter-overlay').classList.remove('open');
+  document.getElementById('newsletter-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitNewsletter(e){
+  e.preventDefault();
+  var name = document.getElementById('newsletter-name').value.trim();
+  var phone = document.getElementById('newsletter-phone').value.trim();
+  if(!name || !phone){
+    showToast('Please enter name and phone');
+    return;
+  }
+
+  if(NEWSLETTER_ENDPOINT){
+    fetch(NEWSLETTER_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name, phone:phone, source:'newsletter'})
+    }).catch(function(err){
+      console.warn('Newsletter submit failed:', err);
+    });
+  } else {
+    localStorage.setItem('miskara_newsletter', JSON.stringify({name:name, phone:phone, date:new Date().toISOString()}));
+  }
+
+  showToast('Thank you! We will contact you soon');
+  closeNewsletterModal();
+}
 
 
 
